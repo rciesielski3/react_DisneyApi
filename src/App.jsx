@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import CharacterList from "./components/CharacterList/CharacterList";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  document.body.className = `${theme}-theme`;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="app">
+      <h1 className="disney-header">Disney Characters</h1>
+      <CharacterList theme={theme} />
+      <footer className="footer">
+        <a
+          href="https://github.com/rciesielski3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a
+          href="https://www.linkedin.com/in/rafa%C5%82-ciesielski-820309100/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
         </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <p>Copyright © 2024</p>
+        <p>Author: Rafał Ciesielski</p>
+        <button className="button" onClick={toggleTheme}>
+          {theme === "light" ? "Dark theme" : "Light theme"}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -5,6 +5,63 @@
   text-align: center;
 }
 
+:root {
+  /* Light theme */
+  --text-color: #213547;
+  --background-color: #d0d9e8;
+
+  /* Dark theme */
+  --text-color-dark: rgba(255, 255, 255, 0.87);
+  --background-color-dark: #738290;
+}
+
+body.light-theme {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+body.dark-theme {
+  color: var(--text-color-dark);
+  background-color: var(--background-color-dark);
+}
+
+.disney-header {
+  background-image: url("./disneyCharacters.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+}
+
+.button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #0056b3;
+  color: var(--text-color-dark);
+  border-radius: 8px;
+}
+
+.button:hover {
+  background-color: var(--background-color-dark);
+  color: var(--text-color);
+}
+
+.dark-theme .button:hover {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.footer > p {
+  margin: 0px;
+}
+
+.footer > a {
+  color: blue;
+  padding: 5px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
