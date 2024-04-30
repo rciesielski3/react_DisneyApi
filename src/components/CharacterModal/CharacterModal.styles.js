@@ -9,7 +9,7 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 `;
 

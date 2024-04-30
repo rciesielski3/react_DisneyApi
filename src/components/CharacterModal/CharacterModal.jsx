@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { createPortal } from "react-dom";
 import {
   ModalOverlay,
@@ -27,7 +26,6 @@ const filterCharacterInfo = (character) => {
 };
 
 const CharacterModal = ({ character, onClose, theme }) => {
-  const modalRootRef = useRef(document.getElementById("modal-root"));
   const filteredInfo = filterCharacterInfo(character);
 
   return createPortal(
@@ -60,7 +58,7 @@ const CharacterModal = ({ character, onClose, theme }) => {
         </ModalContent>
       </ModalContainer>
     </ModalOverlay>,
-    modalRootRef.current
+    document.body
   );
 };
 
