@@ -29,7 +29,7 @@ const CharacterModal = ({ character, onClose, theme }) => {
   const filteredInfo = filterCharacterInfo(character);
 
   return createPortal(
-    <ModalOverlay theme={theme}>
+    <ModalOverlay theme={theme} onClick={onClose}>
       <ModalContainer theme={theme}>
         <ModalContent theme={theme}>
           <CloseButton theme={theme} onClick={onClose}>
