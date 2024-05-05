@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { CardWrapper, Image, Title, Button } from "./CharacterCard.styles";
 import CharacterModal from "../CharacterModal/CharacterModal";
+import { useTheme } from "../Context/ThemeContext";
 
-const CharacterCard = ({ character, theme }) => {
+const CharacterCard = ({ character }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const { theme } = useTheme();
 
   const openModal = () => {
     setModalOpen(true);
@@ -14,14 +16,12 @@ const CharacterCard = ({ character, theme }) => {
   };
 
   return (
-    <>
-      <CardWrapper theme={theme}>
-        <Image src={character.imageUrl} alt={character.name} />
-        <Title>{character.name}</Title>
-        <Button theme={theme} onClick={openModal}>
-          More info
-        </Button>
-      </CardWrapper>
+    <CardWrapper theme={theme}>
+      <Image src={character.imageUrl} alt={character.name} />
+      <Title>{character.name}</Title>
+      <Button theme={theme} onClick={openModal}>
+        More info
+      </Button>
       {modalOpen && (
         <CharacterModal
           character={character}
@@ -29,7 +29,7 @@ const CharacterCard = ({ character, theme }) => {
           theme={theme}
         />
       )}
-    </>
+    </CardWrapper>
   );
 };
 

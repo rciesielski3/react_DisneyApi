@@ -1,45 +1,42 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import CharacterCard from "../CharacterCard/CharacterCard";
-import GetCharacters from "../GetCharacters";
+import useCharacterData from "../useCharacterData";
 import { ListWrapper, LoadingMessage } from "./CharacterList.styles";
 import PaginationButtons from "../PaginationButtons/PaginationButtons";
 
 const CharacterList = ({ theme }) => {
-  const [currentPage, setCurrentPage] = useState(1);
   const {
     characters,
     loading,
+    error,
+    handlePageChange,
+    currentPage,
     totalPages,
-    setCurrentPage: setCharactersPage,
-  } = GetCharacters(currentPage);
+  } = useCharacterData();
 
-  const loadPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  useEffect(() => {
-    setCharactersPage(currentPage);
-  }, [currentPage, setCharactersPage]);
-
-  if (loading && characters.length === 0) {
+  if (loading) {
     return <LoadingMessage />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!characters || characters.length === 0) {
+    return <div>No characters found.</div>;
   }
 
   return (
     <div>
       <ListWrapper theme={theme}>
-        {characters.map((character) => (
-          <CharacterCard
-            key={character._id}
-            character={character}
-            theme={theme}
-          />
+        {characters.map((character, index) => (
+          <CharacterCard key={index} character={character} theme={theme} />
         ))}
       </ListWrapper>
       <PaginationButtons
         currentPage={currentPage}
         totalPages={totalPages}
-        loadPage={loadPage}
+        loadPage={handlePageChange}
         theme={theme}
       />
     </div>

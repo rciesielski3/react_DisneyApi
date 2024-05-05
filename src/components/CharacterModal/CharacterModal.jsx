@@ -1,4 +1,5 @@
 import { createPortal } from "react-dom";
+import { useTheme } from "../Context/ThemeContext";
 import {
   ModalOverlay,
   ModalContainer,
@@ -25,14 +26,15 @@ const filterCharacterInfo = (character) => {
   return filteredInfo;
 };
 
-const CharacterModal = ({ character, onClose, theme }) => {
+const CharacterModal = ({ character, onClose }) => {
+  const { theme } = useTheme();
   const filteredInfo = filterCharacterInfo(character);
 
   return createPortal(
-    <ModalOverlay theme={theme} onClick={onClose}>
+    <ModalOverlay onClick={onClose}>
       <ModalContainer theme={theme}>
-        <ModalContent theme={theme}>
-          <CloseButton theme={theme} onClick={onClose}>
+        <ModalContent>
+          <CloseButton onClick={onClose} theme={theme}>
             X
           </CloseButton>
           <CharacterImage src={character.imageUrl} alt={character.name} />

@@ -1,44 +1,44 @@
-Source:
-https://rciesielski3.github.io/react_DisneyApi
+Online version: https://rciesielski3.github.io/react_DisneyApi
 
-Treść zadania: Celem pracy domowe jest wykonanie prostej aplikacji która pobierze dane z API i wyświetli je w postaci kafelków na stronie. Klikniecie w odpowiednim miejscu w kafelek spowoduje otwarcie modala posiadającego więcej informacji na temat danej postaci. Strona będzie posiadać paginację oraz zmianę motywu z jasnego na ciemny.
+Task content:
+The aim of the homework is to create a simple application that will download data from the API and display it in the form of tiles on the website. Clicking on the tile in the appropriate place will open a modal with more information about a given character. The website will have pagination and a change of theme from light to dark.
 
-Wytyczne:
+Guidelines:
 
-1. Do ostylowania aplikacji używamy styled-components
-2. Sugeruję zapoznać się z biblioteką material-ui, nie jest to element obowiązkowy, jednak może przyspieszyć prace developerskie.
-3. Theming można rozwiązać na na jeden z dwóch sposobów:
-4. Poprzez samodzielnie stworzony context oraz obiekt przechowujący wartości CSS.
+1. We use styled-components to style the application
+2. I suggest you familiarize yourself with the material-ui library, it is not a mandatory element, but it can speed up development work.
+3. Theming can be solved in one of two ways:
+4. Through a self-created context and an object storing CSS values.
 
-Sposób opisany w dokumentacji styled-components.
+The method is described in the styled-components documentation.
 
-Strona główna
+Home
 
-1. Switch do zmiany motywu umieszczamy w prawym górnym rogu aplikacji.
-2. Wyświetlane karty powinny być responsywne i wypełniać dostępną przestrzeń.
-3. Karta zawiera zdjęcie postaci, nazwę oraz przycisk który obsłuży otwarcie modala.
-4. Paginację umieszczamy na dole strony.
-5. Elementy powinny zostać wykonane estetycznie.
+1. Place the switch to change the theme in the upper right corner of the application.
+2. Displayed cards should be responsive and fill the available space.
+3. The card contains a photo of the character, name and a button that will open the modal.
+4. Pagination is placed at the bottom of the page.
+5. The elements should be made aesthetically.
 
-Pobieranie i wyświetlanie danych.
+Downloading and displaying data.
 
-1. Dane pobieramy z publicznego API https://disneyapi.dev/docs
-2. Cała logika biznesowa powinna zostać umieszczona w custom hookach.
-3. Podczas pobierania danych dbamy o obsługę błędów.
-4. W czasie gdy czekamy na dane wyświetlamy stosowny loader.
+1. We download data from the public API https://disneyapi.dev/docs
+2. All business logic should be placed in custom hooks.
+3. We take care of error handling when downloading data.
+4. While we are waiting for the data, we display the appropriate loader.
 
-Paginacja
+Pagination
 
-1. Paginacja powinna wyświetlać prawdziwą ilość dostępnych stron.
-2. Paginacja powinna zostać wykonana w sposób estetyczny.
-3. Na paginacji powinna być zaznaczona strona na której się znajdujemy.
+1. Pagination should display the true number of available pages.
+2. Pagination should be done in an aesthetic way.
+3. The page we are on should be marked on the pagination.
 
 Modal
 
-1. Modal tworzymy za pomoc react portal
-2. Po otwarciu modala pobieramy dane danej postaci na podstawie id.
-3. Na modalu wyświetlamy więcej informacji na temat danej postaci takie jak: films, shortFilms, videoGames, tvShows. Warto zwrócić uwagę że poszczególne postaci będą znacząco różniły się od siebie ilością posiadanych informacji.
-4. Wyświetlamy tylko te informacje które posiada dana postać.
-5. Zdjęcie postaci na modalu powinno być okrągłe.
-6. Modal zamykamy za pomocą przycisku lub klikając poza nim.
-7. Modal również polega zmianie motywu
+1. We create the modal using react portal
+2. After opening the modal, we download the data of a given character based on the id.
+3. The modal displays more information about a given character, such as: films, shortFilms, videoGames, tvShows. It is worth noting that individual characters will differ significantly in the amount of information they have.
+4. We only display the information that a given character has.
+5. The photo of the character on the modal should be round.
+6. Close the modal using the button or by clicking outside it.
+7. Modal also involves changing the theme
