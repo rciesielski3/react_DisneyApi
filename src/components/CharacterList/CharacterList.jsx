@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import useCharacterData from "../useCharacterData";
 import { ListWrapper, LoadingMessage } from "./CharacterList.styles";
