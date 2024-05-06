@@ -16,7 +16,7 @@ const useCharacterData = () => {
         setError(null);
 
         const response = await fetch(
-          `${BASE_URL}/character?page=${page}&pageSize=12`
+          `${BASE_URL}/character?page=${currentPage}&pageSize=12`
         );
 
         if (!response.ok) {
