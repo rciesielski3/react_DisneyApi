@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CardWrapper, Image, Title, Button } from "./CharacterCard.styles";
-import CharacterModal from "../CharacterModal/CharacterModal";
-import { useTheme } from "../Context/ThemeContext";
+import CharacterModal from "../characterModal/CharacterModal";
+import { useTheme } from "../context/ThemeContext";
 
 const CharacterCard = ({ character }) => {
   const [modalOpen, setModalOpen] = useState(false);

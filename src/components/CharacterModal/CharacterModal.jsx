@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { useTheme } from "../Context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 import {
   ModalOverlay,
   ModalContainer,

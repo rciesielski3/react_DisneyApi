@@ -1,7 +1,7 @@
-import CharacterCard from "../CharacterCard/CharacterCard";
+import CharacterCard from "../characterCard/CharacterCard";
 import useCharacterData from "../useCharacterData";
 import { ListWrapper, LoadingMessage } from "./CharacterList.styles";
-import PaginationButtons from "../PaginationButtons/PaginationButtons";
+import PaginationButtons from "../paginationButtons/PaginationButtons";
 
 const CharacterList = ({ theme }) => {
   const {

@@ -1,8 +1,8 @@
 import "./App.css";
-import CharacterList from "./components/CharacterList/CharacterList";
-import { useTheme } from "./components/Context/ThemeContext";
-import CustomizedSwitches from "./components/Context/CustomizedSwitches";
-import Footer from "./components/Context/Footer";
+import CharacterList from "./components/characterList/CharacterList";
+import { useTheme } from "./components/context/ThemeContext";
+import CustomizedSwitches from "./components/context/CustomizedSwitches";
+import Footer from "./components/context/Footer";
 
 function App() {
   const { theme, toggleTheme } = useTheme();

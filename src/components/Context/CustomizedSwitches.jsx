@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import { useState } from "react";
+import { useTheme } from "./ThemeContext";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -57,14 +57,13 @@ const CustomizedSwitchesContainer = styled("div")({
 });
 
 export default function CustomizedSwitches({ onClick }) {
-  const [label, setLabel] = useState("Set light");
+  const theme = useTheme();
 
   const handleToggle = () => {
-    setLabel((prevLabel) =>
-      prevLabel === "Set light" ? "Set dark" : "Set light"
-    );
     onClick();
   };
+
+  const label = theme.theme === "dark" ? "Set light" : "Set dark";
 
   return (
     <CustomizedSwitchesContainer>
